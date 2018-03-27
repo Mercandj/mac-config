@@ -1,7 +1,9 @@
 
 # Jonathan: Android global variables
+export ANDROID_SDK=/Users/jonathan/Library/Android/sdk
 export ANDROID_HOME=/Users/jonathan/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export ANDROID_NDK=/Users/jonathan/Library/Android/sdk/ndk-bundle
 
 # Jonathan: Default text editor in the terminal
 export EDITOR="/Applications/TextEdit.app/Contents/MacOS/TextEdit"
