@@ -54,6 +54,7 @@ alias br="git branch"
 alias gitbr="git branch"
 alias brdel="git branch | grep -v \* | xargs git branch -D"
 alias gitbrdel="git branch | grep -v \* | xargs git branch -D"
+alias tag="git tag"
 alias adbopenurl="adb shell am start -a android.intent.action.VIEW -d "
 alias adbuninstall="adb shell pm uninstall -k "
 
