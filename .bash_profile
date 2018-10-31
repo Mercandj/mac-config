@@ -8,6 +8,13 @@ export ANDROID_NDK=/Users/jonathan/Library/Android/sdk/ndk-bundle
 # Jonathan: Default text editor in the terminal
 export EDITOR="/Applications/TextEdit.app/Contents/MacOS/TextEdit"
 
+# Jonathan: FLutter
+# https://flutter.io/setup-macos/
+export PATH=~/Documents/flutter/bin:$PATH
+
+# Jonathan
+export PATH=$PATH:/Users/jonathan/.apkstudio/vendor
+
 # Jonathan: Alias
 alias finder="open ."
 alias goto="cd ~/Desktop"
@@ -18,8 +25,10 @@ alias gotof="cd ~/Documents/file-android"
 alias gotog="cd ~/Documents/gravity-music"
 alias gotol="cd ~/Documents/launcher"
 alias gotom="cd ~/Documents/mac-config"
+alias gotop="cd ~/Documents/publishing-sdk-android"
 alias gotor="cd ~/"
 alias gotos="cd ~/Documents/sampler-app"
+alias gotosdk="cd $ANDROID_SDK"
 alias gotot="cd ~/Documents/theremin"
 alias gotoy="cd ~/Documents/youtube"
 alias gotoyoo="cd ~/Documents/yootoob"
@@ -30,6 +39,7 @@ alias add="git add ."
 alias gc="git commit"
 alias commit="git commit"
 alias commitm="git commit -m"
+alias res="git reset -q --hard HEAD --"
 alias gs="git status"
 alias st="git status"
 alias gst="git status"
@@ -70,6 +80,9 @@ alias cls="clear"
 alias adbopenurl="adb shell am start -a android.intent.action.VIEW -d "
 alias adbuninstall="adb shell pm uninstall -k "
 
+# Jonathan alias unity
+alias unity='/Applications/Unity/Unity.app/Contents/MacOS/Unity'
+
 # https://android.jlelse.eu/how-i-reduced-my-android-build-times-by-89-4242e51ce946
 alias aapt="$ANDROID_HOME/build-tools/27.0.3/aapt"
 alias apkinstall="adb devices | tail -n +2 | cut -sf 1 | xargs -I X adb -s X install -r $1"
@@ -81,6 +94,9 @@ alias rundy="gotoy && buildAndInstallDebugApk && launchYoutubeApk"
 alias runry="gotoy && buildAndInstallReleaseApk && launchYoutubeApk"
 alias runy="rundy"
 alias publishy="gotoy && ./gradlew assembleUniversalRelease"
+
+alias dex2jar='~/Documents/dex2jar/d2j-dex2jar.sh'
+alias jd-gui='java -jar ~/Documents/dex2jar/jd-gui-1.4.0.jar'
 
 alias setprogit="git config --global user.email 'jonathan.mercandalli@djit.fr' && git config --global user.name 'Jonathan'"
 alias setpersogit="git config --global user.email 'modjow.jm9@gmail.com' && git config --global user.name 'Mercandj'"
