@@ -32,6 +32,7 @@ alias gotosdk="cd $ANDROID_SDK"
 alias gotot="cd ~/Documents/theremin"
 alias gotoy="cd ~/Documents/youtube"
 alias gotoyoo="cd ~/Documents/yootoob"
+alias gotov="cd ~/Documents/video"
 alias gotow="cd ~/Documents/"
 
 # Jonathan: Alias Git
