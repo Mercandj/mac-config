@@ -103,3 +103,7 @@ alias jd-gui='java -jar ~/Documents/dex2jar/jd-gui-1.4.0.jar'
 alias setprogit="git config --global user.email 'jonathan.mercandalli@djit.fr' && git config --global user.name 'Jonathan'"
 alias setpersogit="git config --global user.email 'modjow.jm9@gmail.com' && git config --global user.name 'Mercandj'"
 
+# Android compilation
+# https://source.android.com/setup/build/initializing
+# set the number of open files to be 1024
+ulimit -S -n 1024
