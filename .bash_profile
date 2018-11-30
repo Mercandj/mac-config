@@ -1,3 +1,5 @@
+# brew install zsh zsh-completions
+# https://medium.com/@caulfieldOwen/youre-missing-out-on-a-better-mac-terminal-experience-d73647abf6d7
 
 # Jonathan: Android global variables
 export ANDROID_SDK=/Users/jonathan/Library/Android/sdk
