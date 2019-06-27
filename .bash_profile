@@ -39,6 +39,8 @@ alias gotov="cd ~/Documents/video"
 alias gotow="cd ~/Documents/"
 
 # Jonathan: Alias Git
+alias ls="ls -l -a"
+alias adbi="adb install -r "
 alias add="git add ."
 alias gc="git commit"
 alias commit="git commit"
