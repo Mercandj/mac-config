@@ -95,6 +95,7 @@ alias adbuninstall="adb shell pm uninstall -k "
 # Jonathan alias unity
 alias unity='/Applications/Unity/Unity.app/Contents/MacOS/Unity'
 
+# Jonathan alias Android
 # https://android.jlelse.eu/how-i-reduced-my-android-build-times-by-89-4242e51ce946
 alias aapt="$ANDROID_HOME/build-tools/27.0.3/aapt"
 alias apkinstall="adb devices | tail -n +2 | cut -sf 1 | xargs -I X adb -s X install -r $1"
@@ -108,6 +109,7 @@ alias runy="rundy"
 alias publish="./gradlew publishRelease"
 alias publishy="gotoy && ./gradlew assembleUniversalRelease"
 alias publishe="gotoe && add && stash && dev && pull && ./gradlew edjingFree:publishRelease"
+alias ktlint="./gradlew ktlint"
 
 alias dex2jar='~/Documents/dex2jar/d2j-dex2jar.sh'
 alias jd-gui='java -jar ~/Documents/dex2jar/jd-gui-1.4.0.jar'
