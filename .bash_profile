@@ -21,6 +21,7 @@ export PATH=$PATH:/Users/jonathan/.apkstudio/vendor
 alias finder="open ."
 alias goto="cd ~/Desktop"
 alias gotoa="cd ~/Documents/mwm-audio && setprogit"
+alias gotoapp="cd ~/Documents/app-kits && setprogit"
 alias gotob="cd ~/Documents/browser && setpersogit"
 alias gotoba="cd ~/Documents/bassbooster && setprogit"
 alias gotobass="cd ~/Documents/bassbooster && setprogit"
