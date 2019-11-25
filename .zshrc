@@ -261,6 +261,7 @@ alias tag="git tag"
 alias log="git log"
 alias logme="git log --author=\"Jonathan\" --format=oneline"
 alias logmemr="git log --author=\"Jonathan\" --format=oneline | grep -v \"Merge branch\""
+alias ird="~/Documents/mac-config/script_install_run_debug.sh "
 
 alias cls="clear"
 alias adbopenurl="adb shell am start -a android.intent.action.VIEW -d "
