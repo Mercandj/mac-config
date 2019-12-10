@@ -51,6 +51,7 @@ alias gotow="cd ~/Documents/"
 # Jonathan: Alias Git
 alias runserver="gotof; ./run-server.sh"
 alias ls="ls -l -a"
+alias adbd="adb devices -l"
 alias adbi="adb install -r "
 alias add="git add ."
 alias gc="git commit"
