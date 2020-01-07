@@ -122,8 +122,9 @@ alias publishy="gotoy && ./gradlew assembleUniversalRelease"
 alias publishe="pullmav && gotoe && add && stash && dev && pull && ./gradlew edjingFree:publishRelease"
 alias ktlint="./gradlew ktlint"
 
-alias runHydra="gotoe && ./edjingFree/src/androidTest/run_hydra.sh"
-alias pullHydra="gotoe && ./edjingFree/src/androidTest/pull_hydra_report.sh"
+alias startHydra="gotoe && ./edjingFree/src/androidTest/start_hydra.sh"
+alias pullHydra="gotoe && ./edjingFree/src/androidTest/pull_hydra.sh"
+alias stopHydra="gotoe && ./edjingFree/src/androidTest/stop_hydra.sh"
 
 alias addr2line="${ANDROID_NDK}/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-addr2line -C -f -e "
 alias dex2jar='~/Documents/dex2jar/d2j-dex2jar.sh'
