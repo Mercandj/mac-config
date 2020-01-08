@@ -8,7 +8,7 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export ANDROID_NDK=/Users/jonathan/Library/Android/sdk/ndk-bundle
 
 # Jonathan: Default text editor in the terminal
-export EDITOR="/Applications/TextEdit.app/Contents/MacOS/TextEdit"
+export EDITOR="/Applications/Sublime Text.app/Contents/MacOS/Sublime Text"
 
 # Jonathan: FLutter
 # https://flutter.io/setup-macos/
@@ -122,9 +122,9 @@ alias publishy="gotoy && ./gradlew assembleUniversalRelease"
 alias publishe="pullmav && gotoe && add && stash && dev && pull && ./gradlew edjingFree:publishRelease"
 alias ktlint="./gradlew ktlint"
 
-alias startHydra="gotoe && ./edjingFree/src/androidTest/start_hydra.sh"
-alias pullHydra="gotoe && ./edjingFree/src/androidTest/pull_hydra.sh"
-alias stopHydra="gotoe && ./edjingFree/src/androidTest/stop_hydra.sh"
+alias startHydra="gotoe && ./hydra/start.sh"
+alias pullHydra="gotoe && ./hydra/pull.sh"
+alias stopHydra="gotoe && ./hydra/stop.sh"
 
 alias addr2line="${ANDROID_NDK}/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-addr2line -C -f -e "
 alias dex2jar='~/Documents/dex2jar/d2j-dex2jar.sh'
