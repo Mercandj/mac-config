@@ -288,6 +288,7 @@ alias publish="./gradlew publishRelease"
 alias publishy="gotoy && ./gradlew assembleUniversalRelease"
 alias publishe="pullmav && gotoe && add && stash && dev && pull && ./gradlew edjingFree:publishRelease"
 alias ktlint="./gradlew ktlint"
+alias screenshot="adb shell screencap -p /sdcard/screen.png && adb pull /sdcard/screen.png && adb shell rm /sdcard/screen.png"
 
 alias startHydra="gotoe && ./hydra/start.sh"
 alias pullHydra="gotoe && ./hydra/pull.sh"
