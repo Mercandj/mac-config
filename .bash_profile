@@ -47,6 +47,7 @@ alias gotoy="cd ~/Documents/youtube && setpersogit"
 alias gotoyoo="cd ~/Documents/yootoob && setprogit"
 alias gotov="cd ~/Documents/video && setpersogit"
 alias gotow="cd ~/Documents/"
+alias gotowa="cd ~/Documents/wallpaper-android && setprogit"
 
 # Jonathan: Alias Git
 alias runserver="gotof; ./run-server.sh"
