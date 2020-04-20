@@ -171,7 +171,7 @@ bindkey -s "^[Oo" "/"
 # Jonathan: Android global variables
 export ANDROID_SDK=/Users/jonathan/Library/Android/sdk
 export ANDROID_HOME=/Users/jonathan/Library/Android/sdk
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/Users/jonathan/Documents/cwebp/bin/
 export ANDROID_NDK=/Users/jonathan/Library/Android/sdk/ndk-bundle
 
 # Jonathan: Default text editor in the terminal
@@ -301,6 +301,13 @@ alias jd-gui='java -jar ~/Documents/dex2jar/jd-gui-1.4.0.jar'
 
 alias setprogit="git config --global user.email 'jonathan.mercandalli@djit.fr' && git config --global user.name 'Jonathan'"
 alias setpersogit="git config --global user.email 'modjow.jm9@gmail.com' && git config --global user.name 'Mercandj'"
+
+# Connect Android CI local
+alias androidci="ssh android-ci@10.12.2.58"
+
+# Jonathan alias Android - WebP
+# https://developers.google.com/speed/webp/download
+alias cwebp="/Users/jonathan/Documents/cwebp/bin/cwebp"
 
 # Android compilation
 # https://source.android.com/setup/build/initializing
