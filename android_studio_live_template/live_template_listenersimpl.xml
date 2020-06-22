@@ -1,0 +1,9 @@
+<template name="listenersimpl" value="private val $CLASS_SMALL_FIRST_LETTER$Listeners = ArrayList&lt;$CLASS$&gt;()&#10;&#10;override fun add$CLASS_NAME$(listener: $CLASS$) {&#10;    if ($CLASS_SMALL_FIRST_LETTER$Listeners.contains(listener)) {&#10;        return&#10;    }&#10;    $CLASS_SMALL_FIRST_LETTER$Listeners.add(listener)&#10;}&#10;&#10;override fun remove$CLASS_NAME$(listener: $CLASS$) {&#10;    $CLASS_SMALL_FIRST_LETTER$Listeners.remove(listener)&#10;}&#10;&#10;private fun notifyOn$VALUE$Changed() {&#10;    for (listener in $CLASS_SMALL_FIRST_LETTER$Listeners) {&#10;        listener.on$END$()&#10;    }&#10;}" description="Listeners add and remove impl" toReformat="false" toShortenFQNames="true">
+  <variable name="CLASS_SMALL_FIRST_LETTER" expression="" defaultValue="value" alwaysStopAt="true" />
+  <variable name="CLASS" expression="" defaultValue="ValueListener" alwaysStopAt="true" />
+  <variable name="CLASS_NAME" expression="" defaultValue="ValueListener" alwaysStopAt="true" />
+  <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="KOTLIN_CLASS" value="true" />
+  </context>
+</template>

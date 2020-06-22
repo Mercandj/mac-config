@@ -1,0 +1,7 @@
+<template name="listeners" value="fun add$CLASS$Listener(listener: $CLASS$Listener)&#10;&#10;fun remove$CLASS$Listener(listener: $CLASS$Listener)&#10;&#10;interface $CLASS$Listener {&#10;&#10;    fun on$CHANGED$($END$)&#10;}" description="Listeners add and remove" toReformat="true" toShortenFQNames="true">
+  <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+  <variable name="CHANGED" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="KOTLIN_CLASS" value="true" />
+  </context>
+</template>

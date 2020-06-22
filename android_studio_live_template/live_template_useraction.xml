@@ -1,0 +1,7 @@
+<template name="useraction" value="private val userAction by lazy { createUserAction() }&#10;&#10;private fun createScreen() = object : $CLASS$Contract.Screen {&#10;}&#10;&#10;private fun createUserAction(): $CLASS$Contract.UserAction {&#10;    $END$if (isInEditMode) {&#10;        return object : $CLASS$Contract.UserAction {&#10;        }&#10;    }&#10;    val screen = createScreen()&#10;    return $CLASS$Presenter(&#10;        screen&#10;    )&#10;}&#10;&#10;" description="UserAction creation" toReformat="true" toShortenFQNames="true">
+  <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="KOTLIN_CLASS" value="true" />
+    <option name="KOTLIN_TOPLEVEL" value="true" />
+  </context>
+</template>
