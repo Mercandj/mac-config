@@ -293,6 +293,7 @@ alias publishy="gotoy && ./gradlew assembleUniversalRelease"
 alias publishe="pullmav && gotoe && add && stash && dev && pull && ./gradlew edjingFree:publishRelease"
 alias ktlint="./gradlew ktlint"
 alias screenshot="adb shell screencap -p /sdcard/screen.png && adb pull /sdcard/screen.png && adb shell rm /sdcard/screen.png"
+alias server="gotom && ./server/start.sh"
 
 alias startHydra="gotoe && ./hydra/start.sh"
 alias pullHydra="gotoe && ./hydra/pull.sh"
@@ -307,6 +308,7 @@ alias setpersogit="git config --global user.email 'modjow.jm9@gmail.com' && git 
 
 # Connect Android CI local
 alias androidci="ssh android-ci@10.12.2.58"
+alias vincentci="ssh vbarthel@10.12.7.215"
 
 # Jonathan alias Android - WebP
 # https://developers.google.com/speed/webp/download
