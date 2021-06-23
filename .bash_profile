@@ -10,12 +10,15 @@ export ANDROID_NDK=/Users/jonathan/Library/Android/sdk/ndk-bundle
 # Jonathan: Default text editor in the terminal
 export EDITOR="/Applications/Sublime Text.app/Contents/MacOS/Sublime Text"
 
-# Jonathan: FLutter
+# Jonathan: Flutter
 # https://flutter.io/setup-macos/
 export PATH=~/Documents/flutter/bin:$PATH
 
 # Jonathan
 export PATH=$PATH:/Users/jonathan/.apkstudio/vendor
+
+# Jonathan: MWM
+export MWM_MAVEN_PATH=/Users/jonathan/Documents/maven
 
 # Jonathan: Alias
 alias finder="open ."
@@ -39,6 +42,7 @@ alias gotoma="cd ~/Documents/mac-config && setpersogit"
 alias gotomav="cd ~/Documents/maven && setprogit"
 alias gotomaven="cd ~/Documents/maven && setprogit"
 alias gotome="cd ~/Documents/metronome-android && setprogit"
+alias goton="cd ~/Documents/nft-land-android && setprogit"
 alias gotoo="cd ~/Documents/toonify && setprogit"
 alias gotop="cd ~/Documents/push-kit && setprogit"
 alias gotor="cd ~/"

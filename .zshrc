@@ -184,6 +184,9 @@ export PATH=~/Documents/flutter/bin:$PATH
 # Jonathan
 export PATH=$PATH:/Users/jonathan/.apkstudio/vendor
 
+# Jonathan: MWM
+export MWM_MAVEN_PATH=/Users/jonathan/Documents/maven
+
 # Jonathan: Alias
 alias finder="open ."
 alias goto="cd ~/Desktop"
@@ -206,6 +209,7 @@ alias gotoma="cd ~/Documents/mac-config && setpersogit"
 alias gotomav="cd ~/Documents/maven && setprogit"
 alias gotomaven="cd ~/Documents/maven && setprogit"
 alias gotome="cd ~/Documents/metronome-android && setprogit"
+alias goton="cd ~/Documents/nft-land-android && setprogit"
 alias gotoo="cd ~/Documents/toonify && setprogit"
 alias gotop="cd ~/Documents/push-kit && setprogit"
 alias gotor="cd ~/"
