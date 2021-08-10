@@ -280,6 +280,7 @@ alias emul="pushd ${ANDROID_SDK}/emulator && ./emulator -list-avds && popd"
 alias emus="~/Documents/mac-config/script_emulator_start.sh $1"
 alias iosu="/Users/jonathan/Documents/mercandalli-android/multi_platform_ios/script/run_debug.sh" # Update certifs to a connected iOS device (non simulator)
 alias iosird="/Users/jonathan/Documents/mercandalli-android/multi_platform_ios/ird.sh"
+alias inkscape="/Applications/Inkscape.app/Contents/MacOS/inkscape"
 
 alias cls="clear"
 alias adbopenurl="adb shell am start -a android.intent.action.VIEW -d "
