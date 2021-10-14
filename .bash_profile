@@ -6,6 +6,11 @@ export ANDROID_SDK=/Users/jonathan/Library/Android/sdk
 export ANDROID_HOME=/Users/jonathan/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/Users/jonathan/Documents/cwebp/bin/
 export ANDROID_NDK=/Users/jonathan/Library/Android/sdk/ndk-bundle
+# https://stackoverflow.com/a/24657630/12057504
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)
+
+# Jonathan: iOS Jailbreak AppSync
+export THEOS=~/Documents/theos
 
 # Jonathan: Default text editor in the terminal
 export EDITOR="/Applications/Sublime Text.app/Contents/MacOS/Sublime Text"
