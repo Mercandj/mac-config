@@ -174,7 +174,8 @@ export ANDROID_HOME=/Users/jonathan/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/Users/jonathan/Documents/cwebp/bin/
 export ANDROID_NDK=/Users/jonathan/Library/Android/sdk/ndk-bundle
 # https://stackoverflow.com/a/24657630/12057504
-export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+# https://www.azul.com/downloads/?version=java-8-lts&os=macos&architecture=arm-64-bit&package=jdk
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
 
 # Jonathan: iOS Jailbreak AppSync
 export THEOS=~/Documents/theos
