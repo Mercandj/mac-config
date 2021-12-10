@@ -174,8 +174,11 @@ export ANDROID_HOME=/Users/jonathan/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/Users/jonathan/Documents/cwebp/bin/
 export ANDROID_NDK=/Users/jonathan/Library/Android/sdk/ndk-bundle
 # https://stackoverflow.com/a/24657630/12057504
-# https://www.azul.com/downloads/?version=java-8-lts&os=macos&architecture=arm-64-bit&package=jdk
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
+# https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
+# Brew mac M1
+# https://stackoverflow.com/a/65760032/12057504
+export PATH=/opt/homebrew/bin:$PATH
 
 # Jonathan: iOS Jailbreak AppSync
 export THEOS=~/Documents/theos
