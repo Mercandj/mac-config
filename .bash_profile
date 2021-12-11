@@ -8,11 +8,14 @@ export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/Users/jona
 export ANDROID_NDK=/Users/jonathan/Library/Android/sdk/ndk-bundle
 
 # Java 11
-# brew install openjdk@11
-# sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home
+# -> brew install openjdk@11
+#    sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+#    export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
+#    export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+#    export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home
+# OR -> https://stackoverflow.com/a/24657630/12057504
+#       https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
 
 # Brew mac M1
 # https://stackoverflow.com/a/65760032/12057504
