@@ -41,6 +41,7 @@ export MWM_MAVEN_PATH=/Users/jonathan/Documents/maven
 alias finder="open ."
 alias goto="cd ~/Desktop"
 alias gotoa="cd ~/Documents/mwm-audio && setprogit"
+alias gotoads="cd ~/Documents/ads-kit && setprogit"
 alias gotoapp="cd ~/Documents/app-kits && setprogit"
 alias gotob="cd ~/Documents/browser && setpersogit"
 alias gotoba="cd ~/Documents/bassbooster && setprogit"
