@@ -304,6 +304,9 @@ alias cls="clear"
 alias adbopenurl="adb shell am start -a android.intent.action.VIEW -d "
 alias adbuninstall="adb shell pm uninstall -k "
 
+# Fred alias
+alias gfix="git add . && git commit --am --no-edit && git push -f"
+
 # Jonathan alias unity
 alias unity='/Applications/Unity/Unity.app/Contents/MacOS/Unity'
 
