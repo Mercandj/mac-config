@@ -306,6 +306,8 @@ alias adbuninstall="adb shell pm uninstall -k "
 
 # Fred alias
 alias gfix="git add . && git commit --am --no-edit && git push -f"
+# Jonathan: Create Merge Request like that: mr jm/home-screen-skeleton "[HomeScreen] Skeleton"
+alias mr='URL_TO_OPEN="${"${"${$(git config --get remote.origin.url)/".git"/""}"/":"/"/"}"/"git@"/"https://"}"; function create_merge_request() { BRANCH_NAME=$1; COMMIT_MESSAGE=$2; print "branch_to_create: $BRANCH_NAME" && print "commit_message: $COMMIT_MESSAGE" && git add . && git checkout -b $BRANCH_NAME && git commit -m $COMMIT_MESSAGE && git push --set-upstream origin $BRANCH_NAME && open $URL_TO_OPEN }; create_merge_request'
 
 # Jonathan alias unity
 alias unity='/Applications/Unity/Unity.app/Contents/MacOS/Unity'
