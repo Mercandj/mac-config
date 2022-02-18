@@ -307,7 +307,24 @@ alias adbuninstall="adb shell pm uninstall -k "
 # Fred alias
 alias gfix="git add . && git commit --am --no-edit && git push -f"
 # Jonathan: Create Merge Request like that: mr jm/home-screen-skeleton "[HomeScreen] Skeleton"
-alias mr='URL_TO_OPEN="${"${"${$(git config --get remote.origin.url)/".git"/""}"/":"/"/"}"/"git@"/"https://"}"; function create_merge_request() { BRANCH_NAME=$1; COMMIT_MESSAGE=$2; print "branch_to_create: $BRANCH_NAME" && print "commit_message: $COMMIT_MESSAGE" && git add . && git checkout -b $BRANCH_NAME && git commit -m $COMMIT_MESSAGE && git push --set-upstream origin $BRANCH_NAME && open $URL_TO_OPEN }; create_merge_request'
+function mr() {
+    if [ $# -ne 2 ]; then
+        echo "Usage: mr [branch_name] [commit_message]"
+        return
+    fi
+    echo "MR bash function"
+    BRANCH_NAME=$1
+    COMMIT_MESSAGE=$2
+    echo "branch_name: $BRANCH_NAME"
+    echo "commit_message: $COMMIT_MESSAGE"
+    GIT_REMOTE_ORIGIN_URL=$(git config --get remote.origin.url)
+    PROJECT_URL="${"${"${$GIT_REMOTE_ORIGIN_URL/".git"/""}"/":"/"/"}"/"git@"/"https://"}"
+    git add --all
+    git checkout -b $BRANCH_NAME
+    git commit -m $COMMIT_MESSAGE
+    git push --set-upstream origin $BRANCH_NAME # --push-option=merge_request.create --push-option=merge_request.label="mr::to-review"
+    open $PROJECT_URL
+}
 
 # Jonathan alias unity
 alias unity='/Applications/Unity/Unity.app/Contents/MacOS/Unity'
