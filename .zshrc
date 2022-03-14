@@ -317,13 +317,12 @@ function mr() {
     COMMIT_MESSAGE=$2
     echo "branch_name: $BRANCH_NAME"
     echo "commit_message: $COMMIT_MESSAGE"
-    GIT_REMOTE_ORIGIN_URL=$(git config --get remote.origin.url)
-    PROJECT_URL="${"${"${$GIT_REMOTE_ORIGIN_URL/".git"/""}"/":"/"/"}"/"git@"/"https://"}"
+    PROJECT_URL="${"${"${"$(git config --get remote.origin.url)"/".git"/""}"/":"/"/"}"/"git@"/"https://"}"
     git add --all
     git checkout -b $BRANCH_NAME
     git commit -m $COMMIT_MESSAGE
     git push --set-upstream origin $BRANCH_NAME # --push-option=merge_request.create --push-option=merge_request.label="mr::to-review"
-    open $PROJECT_URL
+    open "https://code.musicworldmedia.com/"
 }
 
 # Jonathan alias unity
@@ -344,6 +343,7 @@ alias publish="./gradlew publishRelease"
 alias publishy="gotoy && ./gradlew assembleUniversalRelease"
 alias publishe="pullmav && gotoe && add && stash && dev && pull && ./gradlew edjingFree:publishRelease"
 alias ktlint="./gradlew ktlint"
+alias ktformat="./gradlew ktformat"
 alias screenshot="adb shell screencap -p /sdcard/screen.png && adb pull /sdcard/screen.png && adb shell rm /sdcard/screen.png"
 alias server="gotom && ./server/start.sh"
 

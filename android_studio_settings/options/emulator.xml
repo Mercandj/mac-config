@@ -1,0 +1,5 @@
+<application>
+  <component name="Emulator">
+    <option name="showLaunchedStandaloneNotification" value="false" />
+  </component>
+</application>

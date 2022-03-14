@@ -1,0 +1,6 @@
+GLSL
+com.developerphil.adbidea
+com.intellij.marketplace
+com.thoughtworks.gauge
+org.intellij.plugins.markdown
+org.jetbrains.kotlin

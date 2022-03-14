@@ -1,0 +1,85 @@
+<templateSet group="Jonathan">
+  <template name="log" value="android.util.Log.d(&quot;jm/debug&quot;, &quot;$FILE$.$METHOD$ | $CONTENT$&quot;)" description="Log jm/debug description" toReformat="true" toShortenFQNames="true">
+    <variable name="FILE" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="METHOD" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="CONTENT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="useraction" value="private val userAction by lazy { createUserAction() }&#10;&#10;private fun createScreen() = object : $CLASS$Contract.Screen {&#10;}&#10;&#10;private fun createUserAction(): $CLASS$Contract.UserAction {&#10;    $END$if (isInEditMode) {&#10;        return object : $CLASS$Contract.UserAction {&#10;        }&#10;    }&#10;    val screen = createScreen()&#10;    return $CLASS$Presenter(&#10;        screen&#10;    )&#10;}&#10;&#10;" description="UserAction creation" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="listenersimpl" value="private val listeners = ArrayList&lt;$KOTLIN_CLASS$.Listener&gt;()&#10;&#10;override fun addListener(listener: $KOTLIN_CLASS$.Listener) {&#10;    if (listeners.contains(listener)) {&#10;        return&#10;    }&#10;    listeners.add(listener)&#10;}&#10;&#10;override fun removeListener(listener: $KOTLIN_CLASS$.Listener) {&#10;    listeners.remove(listener)&#10;}" description="Listeners add and remove impl" toReformat="false" toShortenFQNames="true">
+    <variable name="KOTLIN_CLASS" expression="kotlinClassName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="listenersapi" value="fun add$CLASS$Listener(listener: $CLASS$Listener)&#10;&#10;fun remove$CLASS$Listener(listener: $CLASS$Listener)&#10;&#10;interface $CLASS$Listener {&#10;&#10;    fun onChanged()&#10;}" description="Listeners add and remove" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="viewimpl" value="private val view = inflateLayout(R.layout.main_layout_to_replace_view)&#10;private val userAction by lazy { createUserAction() }&#10;&#10;override fun onAttachedToWindow() {&#10;    super.onAttachedToWindow()&#10;    userAction.onAttachedToWindow()&#10;}&#10;&#10;override fun onDetachedFromWindow() {&#10;    super.onDetachedFromWindow()&#10;    userAction.onDetachedFromWindow()&#10;}&#10;&#10;private fun &lt;T : View&gt; bind(@Suppress(&quot;SameParameterValue&quot;) @IdRes id: Int): T {&#10;    @Suppress(&quot;RemoveExplicitTypeArguments&quot;)&#10;    return view.findViewById&lt;T&gt;(id)&#10;}&#10;&#10;private fun createScreen() = object : $KOTLIN_CLASS$Contract.Screen {&#10;}&#10;&#10;private fun createUserAction(): $KOTLIN_CLASS$Contract.UserAction {&#10;    if (isInEditMode) {&#10;        return object : $KOTLIN_CLASS$Contract.UserAction {&#10;            override fun onAttachedToWindow() {}&#10;            override fun onDetachedFromWindow() {}&#10;        }&#10;    }&#10;    return $KOTLIN_CLASS$Presenter(&#10;        createScreen()&#10;    )&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="KOTLIN_CLASS" expression="kotlinClassName()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="framelayout" value="@JvmOverloads constructor(&#10;context: Context,&#10;attrs: AttributeSet? = null,&#10;defStyleAttr: Int = 0&#10;) : FrameLayout(context, attrs, defStyleAttr)" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="viewcontract" value="interface UserAction {&#10;&#10;    fun onAttachedToWindow()&#10;&#10;    fun onDetachedFromWindow()&#10;}&#10;&#10;interface Screen" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="logt" value="android.util.Log.e(&quot;jm/debug&quot;, &quot;$FILE$.$METHOD$ | $CONTENT$ &quot; + Log.getStackTraceString(Exception()))" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="FILE" expression="fileName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="METHOD" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="CONTENT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="logs" value="android.util.Log.d(&quot;jm/debug&quot;, &quot;$FILE$.$METHOD$ | $CONTENT$ | ${Log.getStackTraceString(Exception())}&quot;)" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="FILE" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="METHOD" expression="kotlinFunctionName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="CONTENT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="createlistener" value="private fun create$CLASS$Listener() = object: $CLASS$Manager.Listener {&#10;   override fun onChanged() {&#10;      $CONTENT$&#10;   }&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CONTENT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="createsharedpreferences" value="private fun createSharedPreferences(): SharedPreferences {&#10;    return $CLASS1$.getContext().getSharedPreferences(&#10;        $CLASS2$.PREFERENCE_NAME,&#10;        Context.MODE_PRIVATE&#10;    )&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="forlisteners" value="for (listener in listeners) {&#10;    listener.onChanged()&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="loadifneeded" value="private var loaded = false&#10;&#10;private fun loadIfNeeded() {&#10;    if (loaded) {&#10;        return&#10;    }&#10;    loaded = true&#10;}&#10;&#10;private fun save() {&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+</templateSet>

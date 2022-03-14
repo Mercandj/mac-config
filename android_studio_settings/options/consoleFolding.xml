@@ -1,0 +1,11 @@
+<application>
+  <component name="ConsoleFoldingSettings">
+    <option name="addedPositive">
+      <list>
+        <option value="E/GnssHAL_GnssInterface: gnssSvStatusCb: a: input svInfo.flags is 8" />
+        <option value="E/GnssHAL_GnssInterface: gnssSvStatusCb: b: input svInfo.flags is 8" />
+        <option value="Task was cancelled." />
+      </list>
+    </option>
+  </component>
+</application>

@@ -1,0 +1,22 @@
+<application>
+  <component name="FileTypeManager" version="18">
+    <extensionMap>
+      <mapping pattern="how" type="AUTO_DETECTED" />
+      <mapping ext="db" type="Android Room SQL" />
+      <mapping ext="gradle.kts" type="Kotlin" />
+      <mapping ext="main.kts" type="Kotlin" />
+      <mapping pattern="test" type="PLAIN_TEXT" />
+      <mapping pattern="current_user_channels" type="PLAIN_TEXT" />
+      <mapping pattern="LICENSE" type="PLAIN_TEXT" />
+      <mapping ext="plist" type="PLAIN_TEXT" />
+      <mapping ext="ms" type="PLAIN_TEXT" />
+      <mapping ext="demo" type="PLAIN_TEXT" />
+      <mapping ext="tube" type="PLAIN_TEXT" />
+      <mapping ext="output" type="PLAIN_TEXT" />
+      <mapping ext="pb" type="PLAIN_TEXT" />
+      <mapping ext="rsa" type="PLAIN_TEXT" />
+      <removed_mapping ext="apk" approved="true" type="ARCHIVE" />
+      <removed_mapping ext="psd" approved="true" type="Image" />
+    </extensionMap>
+  </component>
+</application>
