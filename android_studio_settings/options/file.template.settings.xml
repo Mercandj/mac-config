@@ -1,0 +1,32 @@
+<application>
+  <component name="ExportableFileTemplateSettings">
+    <default_templates>
+      <template name="Kotlin Screen.kt" file-name="${NAME}View" reformat="true" live-template-enabled="false">
+        <template name="Kotlin Screen.kt.child.5.kt" file-name="${NAME}ViewModule" reformat="true" live-template-enabled="false" />
+        <template name="Kotlin Screen.kt.child.4.kt" file-name="${NAME}ViewManager" reformat="true" live-template-enabled="false" />
+        <template name="Kotlin Screen.kt.child.3.kt" file-name="${NAME}ViewManagerImpl" reformat="true" live-template-enabled="false" />
+        <template name="Kotlin Screen.kt.child.0.kt" file-name="${NAME}ViewModel" reformat="true" live-template-enabled="false" />
+        <template name="Kotlin Screen.kt.child.1.kt" file-name="${NAME}ViewContract" reformat="true" live-template-enabled="false" />
+        <template name="Kotlin Screen.kt.child.2.kt" file-name="${NAME}ViewPresenter" reformat="true" live-template-enabled="false" />
+      </template>
+      <template name="Kotlin Screen.kt.child.0.kt" file-name="${NAME}ViewModel" reformat="true" live-template-enabled="false" />
+      <template name="Kotlin Screen.kt.child.1.kt" file-name="${NAME}ViewContract" reformat="true" live-template-enabled="false" />
+      <template name="Kotlin Screen.kt.child.2.kt" file-name="${NAME}ViewPresenter" reformat="true" live-template-enabled="false" />
+      <template name="Kotlin Screen.kt.child.3.kt" file-name="${NAME}ViewManagerImpl" reformat="true" live-template-enabled="false" />
+      <template name="Kotlin Screen.kt.child.4.kt" file-name="${NAME}ViewManager" reformat="true" live-template-enabled="false" />
+      <template name="Kotlin Screen.kt.child.5.kt" file-name="${NAME}ViewModule" reformat="true" live-template-enabled="false" />
+      <template name="Kotlin View.kt" file-name="${NAME}View" reformat="true" live-template-enabled="false">
+        <template name="Kotlin View.kt.child.1.kt" file-name="${NAME}ViewContract" reformat="true" live-template-enabled="false" />
+        <template name="Kotlin View.kt.child.2.kt" file-name="${NAME}ViewPresenter" reformat="true" live-template-enabled="false" />
+      </template>
+      <template name="Kotlin View.kt.child.1.kt" file-name="${NAME}ViewContract" reformat="true" live-template-enabled="false" />
+      <template name="Kotlin View.kt.child.2.kt" file-name="${NAME}ViewPresenter" reformat="true" live-template-enabled="false" />
+      <template name="Manager.kt" file-name="${NAME}Manager" reformat="true" live-template-enabled="false">
+        <template name="Manager.kt.child.0.kt" file-name="${NAME}Module" reformat="true" live-template-enabled="false" />
+        <template name="Manager.kt.child.1.kt" file-name="${NAME}ManagerImpl" reformat="true" live-template-enabled="false" />
+      </template>
+      <template name="Manager.kt.child.0.kt" file-name="${NAME}Module" reformat="true" live-template-enabled="false" />
+      <template name="Manager.kt.child.1.kt" file-name="${NAME}ManagerImpl" reformat="true" live-template-enabled="false" />
+    </default_templates>
+  </component>
+</application>

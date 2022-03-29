@@ -1,5 +1,6 @@
 GLSL
 com.developerphil.adbidea
+com.github.b3er.idea.plugins.arc.browser
 com.intellij.marketplace
 com.thoughtworks.gauge
 org.intellij.plugins.markdown

@@ -8,6 +8,9 @@
     <keyboard-shortcut first-keystroke="meta 9" />
     <keyboard-shortcut first-keystroke="meta #10000e7" />
   </action>
+  <action id="Android.SyncProject">
+    <keyboard-shortcut first-keystroke="ctrl meta s" />
+  </action>
   <action id="CloseAllEditors">
     <keyboard-shortcut first-keystroke="shift meta w" />
   </action>
@@ -25,11 +28,23 @@
     <keyboard-shortcut first-keystroke="meta divide" />
     <keyboard-shortcut first-keystroke="meta colon" />
   </action>
+  <action id="Debugger.AddToWatch">
+    <keyboard-shortcut first-keystroke="ctrl meta w" />
+  </action>
   <action id="FileChooser.GotoModule" />
   <action id="FileChooser.LightEditGotoOpenedFile">
     <keyboard-shortcut first-keystroke="meta quote" />
   </action>
+  <action id="Git.Branches">
+    <keyboard-shortcut first-keystroke="ctrl meta b" />
+  </action>
+  <action id="Git.CompareWithBranch">
+    <keyboard-shortcut first-keystroke="ctrl meta c" />
+  </action>
   <action id="Images.Editor.ToggleGrid" />
+  <action id="ManageRecentProjects">
+    <keyboard-shortcut first-keystroke="ctrl meta o" />
+  </action>
   <action id="MethodDown">
     <keyboard-shortcut first-keystroke="ctrl meta alt down" />
   </action>
