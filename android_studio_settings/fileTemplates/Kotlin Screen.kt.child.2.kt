@@ -2,17 +2,18 @@
 
 #end
 #parse("File Header.java")
-class ${NAME}ViewPresenter(
-    private val screen: ${NAME}ViewContract.Screen
-) : ${NAME}ViewContract.UserAction {
+interface ${NAME}ViewManager {
 
-    override fun onAttachedToWindow() {
-        updateScreen()
-    }
+    fun getViewModel(): ${NAME}ViewModel?
 
-    override fun onDetachedFromWindow() {
-    }
+    fun setViewModel(viewModel: ${NAME}ViewModel?)
 
-    private fun updateScreen() {
+    fun addListener(listener: Listener)
+
+    fun removeListener(listener: Listener)
+    
+    interface Listener {
+    
+        fun onChanged()
     }
 }

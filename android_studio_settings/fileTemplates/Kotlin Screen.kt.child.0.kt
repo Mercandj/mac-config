@@ -2,6 +2,17 @@
 
 #end
 #parse("File Header.java")
-data class ${NAME}ViewModel(
-    val id: String
-)
+interface ${NAME}ViewContract {
+
+    interface UserAction {
+        
+        fun onAttachedToWindow()
+        
+        fun onDetachedFromWindow()
+    }
+    
+    interface Screen {
+    
+        fun setVisibility(visible: Boolean)
+    }
+}

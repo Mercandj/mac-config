@@ -2,18 +2,33 @@
 
 #end
 #parse("File Header.java")
-interface ${NAME}ViewManager {
+class ${NAME}ViewManagerImpl : ${NAME}ViewManager {
 
-    fun getViewModel(): ${NAME}ViewModel?
+    private val listeners = ArrayList<${NAME}ViewManager.Listener>()
+    private var viewModel: ${NAME}ViewModel? = null
 
-    fun setViewModel(viewModel: ${NAME}ViewModel?)
+    override fun getViewModel(): ${NAME}ViewModel? {
+        return viewModel
+    }
 
-    fun addListener(listener: Listener)
+    override fun setViewModel(viewModel: ${NAME}ViewModel?) {
+        if (this.viewModel == viewModel) {
+            return
+        }
+        this.viewModel = viewModel
+        for (listener in listeners) {
+            listener.onChanged()
+        }
+    }
 
-    fun removeListener(listener: Listener)
+    override fun addListener(listener: ${NAME}ViewManager.Listener) {
+        if (listeners.contains(listener)) {
+            return
+        }
+        listeners.add(listener)
+    }
     
-    interface Listener {
-    
-        fun onChanged()
+    override fun removeListener(listener: ${NAME}ViewManager.Listener) {
+        listeners.remove(listener)
     }
 }

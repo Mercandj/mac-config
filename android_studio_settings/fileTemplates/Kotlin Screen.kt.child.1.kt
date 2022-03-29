@@ -2,14 +2,9 @@
 
 #end
 #parse("File Header.java")
-interface ${NAME}ViewContract {
+class ${NAME}ViewModule {
 
-    interface UserAction {
-        
-        fun onAttachedToWindow()
-        
-        fun onDetachedFromWindow()
+    fun create${NAME}ViewManager(): ${NAME}ViewManager {
+        return ${NAME}ViewManagerImpl()
     }
-   
-   interface Screen
 }

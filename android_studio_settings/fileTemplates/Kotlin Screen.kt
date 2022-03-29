@@ -33,6 +33,9 @@ class ${NAME}View @JvmOverloads constructor(
     }
     
     private fun createScreen() = object : ${NAME}ViewContract.Screen {
+        override fun setVisibility(visible: Boolean) {
+            visibility = visible.visibleToVisibleOrGone()
+        }
     }
     
     private fun createUserAction(): ${NAME}ViewContract.UserAction {
@@ -43,7 +46,8 @@ class ${NAME}View @JvmOverloads constructor(
             }
         }
         return ${NAME}ViewPresenter(
-            createScreen()
+            createScreen(),
+            Graph.get${NAME}ViewManager()
         )
     }
 }
