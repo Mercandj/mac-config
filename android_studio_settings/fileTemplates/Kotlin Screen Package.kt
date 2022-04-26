@@ -1,20 +1,21 @@
-#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${FEATURE}
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
 import androidx.annotation.IdRes
+import ${PACKAGE_NAME}.R
 
 #end
 #parse("File Header.java")
-class ${NAME}View @JvmOverloads constructor(
+class ${NAME} @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
-    private val view = inflateLayout(R.layout.main_layout_to_replace_view)
+    private val view = inflateLayout(R.layout.${FEATURE})
     private val userAction by lazy { createUserAction() }
     
     override fun onAttachedToWindow() {
@@ -32,22 +33,22 @@ class ${NAME}View @JvmOverloads constructor(
         return view.findViewById<T>(id)
     }
     
-    private fun createScreen() = object : ${NAME}ViewContract.Screen {
+    private fun createScreen() = object : ${NAME}Contract.Screen {
         override fun setVisibility(visible: Boolean) {
             visibility = visible.visibleToVisibleOrGone()
         }
     }
     
-    private fun createUserAction(): ${NAME}ViewContract.UserAction {
+    private fun createUserAction(): ${NAME}Contract.UserAction {
         if (isInEditMode) {
-            return object : ${NAME}ViewContract.UserAction {
+            return object : ${NAME}Contract.UserAction {
                 override fun onAttachedToWindow() {}
                 override fun onDetachedFromWindow() {}
             }
         }
-        return ${NAME}ViewPresenter(
+        return ${NAME}Presenter(
             createScreen(),
-            Graph.get${NAME}ViewManager()
+            Graph.get${NAME}Manager()
         )
     }
 }

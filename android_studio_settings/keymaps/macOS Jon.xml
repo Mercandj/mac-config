@@ -14,6 +14,12 @@
   <action id="CloseAllEditors">
     <keyboard-shortcut first-keystroke="shift meta w" />
   </action>
+  <action id="CloseAllEditorsButActive">
+    <keyboard-shortcut first-keystroke="shift ctrl meta w" />
+  </action>
+  <action id="CloseAllNotifications">
+    <keyboard-shortcut first-keystroke="ctrl meta back_space" />
+  </action>
   <action id="CommentByBlockComment">
     <keyboard-shortcut first-keystroke="meta alt slash" />
     <keyboard-shortcut first-keystroke="meta alt divide" />
@@ -31,6 +37,9 @@
   <action id="Debugger.AddToWatch">
     <keyboard-shortcut first-keystroke="ctrl meta w" />
   </action>
+  <action id="EditorSortLines">
+    <keyboard-shortcut first-keystroke="ctrl meta z" />
+  </action>
   <action id="FileChooser.GotoModule" />
   <action id="FileChooser.LightEditGotoOpenedFile">
     <keyboard-shortcut first-keystroke="meta quote" />
@@ -40,6 +49,9 @@
   </action>
   <action id="Git.CompareWithBranch">
     <keyboard-shortcut first-keystroke="ctrl meta c" />
+  </action>
+  <action id="Git.Pull">
+    <keyboard-shortcut first-keystroke="ctrl meta p" />
   </action>
   <action id="Images.Editor.ToggleGrid" />
   <action id="ManageRecentProjects">
@@ -54,12 +66,21 @@
   </action>
   <action id="NextEditorTab" />
   <action id="PreviousEditorTab" />
+  <action id="RebuildGradleProject">
+    <keyboard-shortcut first-keystroke="ctrl meta x" />
+  </action>
+  <action id="RevealIn">
+    <keyboard-shortcut first-keystroke="ctrl meta v" />
+  </action>
   <action id="SplitVertically">
     <keyboard-shortcut first-keystroke="ctrl meta right" />
   </action>
   <action id="TogglePresentationMode">
     <keyboard-shortcut first-keystroke="meta quotedbl" />
     <keyboard-shortcut first-keystroke="meta 3" />
+  </action>
+  <action id="ToggleZenMode">
+    <keyboard-shortcut first-keystroke="meta #10000e9" />
   </action>
   <action id="Unsplit">
     <keyboard-shortcut first-keystroke="ctrl meta left" />

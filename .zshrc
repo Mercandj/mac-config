@@ -294,6 +294,7 @@ alias log="git log"
 alias logme="git log --author=\"Jonathan\" --format=oneline"
 alias logmemr="git log --author=\"Jonathan\" --format=oneline | grep -v \"Merge branch\""
 alias ird="~/Documents/mac-config/script_install_run_debug.sh "
+alias irr="~/Documents/mac-config/script_install_run_release.sh "
 alias emul="pushd ${ANDROID_SDK}/emulator && ./emulator -list-avds && popd"
 alias emus="~/Documents/mac-config/script_emulator_start.sh $1"
 alias iosu="/Users/jonathan/Documents/mercandalli-android/multi_platform_ios/script/run_debug.sh" # Update certifs to a connected iOS device (non simulator)
