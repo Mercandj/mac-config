@@ -1,6 +1,0 @@
-<application>
-  <component name="IntentionManagerSettings">
-    <ignoreAction name="Kotlin/Remove explicit type specification" />
-    <ignoreAction name="Kotlin/Introduce import alias" />
-  </component>
-</application>
