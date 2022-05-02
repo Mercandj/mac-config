@@ -1,34 +1,39 @@
-#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${FEATURE}
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${NAME}
 
 #end
 #parse("File Header.java")
-class ${NAME}ManagerImpl : ${NAME}Manager {
+#set ($FEATURE_CAMEL_CASE = ${StringUtils.removeAndHump(${NAME}, "_")})
+class ${FEATURE_CAMEL_CASE}Presenter(
+    private val screen: ${FEATURE_CAMEL_CASE}Contract.Screen,
+    private val m${FEATURE_CAMEL_CASE}Manager: ${FEATURE_CAMEL_CASE}Manager
+) : ${FEATURE_CAMEL_CASE}Contract.UserAction {
 
-    private val listeners = ArrayList<${NAME}Manager.Listener>()
-    private var viewModel: ${NAME}Model? = null
+    private val m${FEATURE_CAMEL_CASE}Listener = create${FEATURE_CAMEL_CASE}Listener()
 
-    override fun getViewModel(): ${NAME}Model? {
-        return viewModel
+    override fun onAttachedToWindow() {
+        m${FEATURE_CAMEL_CASE}Manager.addListener(m${FEATURE_CAMEL_CASE}Listener)
+        updateScreen()
     }
 
-    override fun setViewModel(viewModel: ${NAME}Model?) {
-        if (this.viewModel == viewModel) {
-            return
-        }
-        this.viewModel = viewModel
-        for (listener in listeners) {
-            listener.onChanged()
-        }
+    override fun onDetachedFromWindow() {
+        m${FEATURE_CAMEL_CASE}Manager.removeListener(m${FEATURE_CAMEL_CASE}Listener)
     }
 
-    override fun addListener(listener: ${NAME}Manager.Listener) {
-        if (listeners.contains(listener)) {
-            return
-        }
-        listeners.add(listener)
+    private fun updateScreen() {
+        updateVisibility()
+    }
+ 
+    private fun updateVisibility() {
+        screen.setVisibility(createVisibility())
+    }
+ 
+    private fun createVisibility(): Boolean {
+        return m${FEATURE_CAMEL_CASE}Manager.getViewModel() != null
     }
     
-    override fun removeListener(listener: ${NAME}Manager.Listener) {
-        listeners.remove(listener)
+    private fun create${FEATURE_CAMEL_CASE}Listener() = object: ${FEATURE_CAMEL_CASE}Manager.Listener {
+        override fun onChanged() {
+            updateVisibility()
+        }
     }
 }

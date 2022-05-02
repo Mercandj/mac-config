@@ -1,19 +1,19 @@
-#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${FEATURE}
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${NAME}
 
 #end
 #parse("File Header.java")
-interface ${NAME}Manager {
+#set ($FEATURE_CAMEL_CASE = ${StringUtils.removeAndHump(${NAME}, "_")})
+interface ${FEATURE_CAMEL_CASE}Contract {
 
-    fun getViewModel(): ${NAME}Model?
-
-    fun setViewModel(viewModel: ${NAME}Model?)
-
-    fun addListener(listener: Listener)
-
-    fun removeListener(listener: Listener)
+    interface UserAction {
+        
+        fun onAttachedToWindow()
+        
+        fun onDetachedFromWindow()
+    }
     
-    interface Listener {
+    interface Screen {
     
-        fun onChanged()
+        fun setVisibility(visible: Boolean)
     }
 }

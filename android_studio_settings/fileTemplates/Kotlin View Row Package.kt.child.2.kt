@@ -1,4 +1,4 @@
-#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${FEATURE}
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${NAME}
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -6,14 +6,15 @@ import com.hannesdorfmann.adapterdelegates4.AbsListItemAdapterDelegate
 
 #end
 #parse("File Header.java")
-class ${NAME}AdapterDelegate :
-    AbsListItemAdapterDelegate<Any, Any, ${NAME}AdapterDelegate.ViewHolder>() {
+#set ($FEATURE_CAMEL_CASE = ${StringUtils.removeAndHump(${NAME}, "_")})
+class ${FEATURE_CAMEL_CASE}AdapterDelegate :
+    AbsListItemAdapterDelegate<Any, Any, ${FEATURE_CAMEL_CASE}AdapterDelegate.ViewHolder>() {
 
     override fun isForViewType(o: Any, l: List<Any>, i: Int) =
-        o is ${NAME}Model
+        o is ${FEATURE_CAMEL_CASE}Model
 
     override fun onCreateViewHolder(viewGroup: ViewGroup): ViewHolder {
-        val view = ${NAME}(viewGroup.context)
+        val view = ${FEATURE_CAMEL_CASE}(viewGroup.context)
         view.layoutParams = RecyclerView.LayoutParams(
             RecyclerView.LayoutParams.MATCH_PARENT,
             RecyclerView.LayoutParams.WRAP_CONTENT
@@ -22,8 +23,8 @@ class ${NAME}AdapterDelegate :
     }
 
     override fun onBindViewHolder(item: Any, viewHolder: ViewHolder, list: MutableList<Any>) {
-        viewHolder.view.setViewModel(item as ${NAME}Model)
+        viewHolder.view.setViewModel(item as ${FEATURE_CAMEL_CASE}Model)
     }
 
-    class ViewHolder(val view: ${NAME}) : RecyclerView.ViewHolder(view)
+    class ViewHolder(val view: ${FEATURE_CAMEL_CASE}) : RecyclerView.ViewHolder(view)
 }

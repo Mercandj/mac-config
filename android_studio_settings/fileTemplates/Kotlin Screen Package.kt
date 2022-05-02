@@ -1,4 +1,4 @@
-#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${FEATURE}
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${NAME}
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,9 +6,11 @@ import android.view.View
 import android.widget.FrameLayout
 import androidx.annotation.IdRes
 import ${PACKAGE_NAME}.R
+import com.mercandalli.android.sdk.view.ViewExtension.inflateLayout
 
 #end
 #parse("File Header.java")
+#set ($FEATURE_CAMEL_CASE = ${StringUtils.removeAndHump(${NAME}, "_")})
 class ${NAME} @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,

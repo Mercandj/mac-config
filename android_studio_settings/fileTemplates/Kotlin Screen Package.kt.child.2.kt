@@ -1,38 +1,11 @@
-#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${FEATURE}
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${NAME}
 
 #end
 #parse("File Header.java")
-class ${NAME}Presenter(
-    private val screen: ${NAME}Contract.Screen,
-    private val m${NAME}Manager: ${NAME}Manager
-) : ${NAME}Contract.UserAction {
+#set ($FEATURE_CAMEL_CASE = ${StringUtils.removeAndHump(${NAME}, "_")})
+class ${FEATURE_CAMEL_CASE}Module {
 
-    private val m${NAME}Listener = create${NAME}Listener()
-
-    override fun onAttachedToWindow() {
-        m${NAME}Manager.addListener(m${NAME}Listener)
-        updateScreen()
-    }
-
-    override fun onDetachedFromWindow() {
-        m${NAME}Manager.removeListener(m${NAME}Listener)
-    }
-
-    private fun updateScreen() {
-        updateVisibility()
-    }
- 
-    private fun updateVisibility() {
-        screen.setVisibility(createVisibility())
-    }
- 
-    private fun createVisibility(): Boolean {
-        return m${NAME}Manager.getViewModel() != null
-    }
-    
-    private fun create${NAME}Listener() = object: ${NAME}Manager.Listener {
-        override fun onChanged() {
-            updateVisibility()
-        }
+    fun create${FEATURE_CAMEL_CASE}Manager(): ${FEATURE_CAMEL_CASE}Manager {
+        return ${FEATURE_CAMEL_CASE}ManagerImpl()
     }
 }

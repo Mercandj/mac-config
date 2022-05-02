@@ -1,12 +1,13 @@
-#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${FEATURE}
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${NAME}
 
 #end
 #parse("File Header.java")
-class ${NAME}Presenter(
-    private val screen: ${NAME}Contract.Screen
-) : ${NAME}Contract.UserAction {
+#set ($FEATURE_CAMEL_CASE = ${StringUtils.removeAndHump(${NAME}, "_")})
+class ${FEATURE_CAMEL_CASE}Presenter(
+    private val screen: ${FEATURE_CAMEL_CASE}Contract.Screen
+) : ${FEATURE_CAMEL_CASE}Contract.UserAction {
 
-    private var viewModel: ${NAME}Model? = null
+    private var viewModel: ${FEATURE_CAMEL_CASE}Model? = null
 
     override fun onAttachedToWindow() {
         updateScreen()
@@ -15,7 +16,7 @@ class ${NAME}Presenter(
     override fun onDetachedFromWindow() {
     }
     
-    override fun onViewModelSet(viewModel: ${NAME}Model) {
+    override fun onViewModelSet(viewModel: ${FEATURE_CAMEL_CASE}Model) {
         if (this.viewModel == viewModel) {
             return
         }

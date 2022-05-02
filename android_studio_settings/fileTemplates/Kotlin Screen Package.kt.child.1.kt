@@ -1,10 +1,8 @@
-#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${FEATURE}
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${NAME}
 
 #end
 #parse("File Header.java")
-class ${NAME}Module {
-
-    fun create${NAME}Manager(): ${NAME}Manager {
-        return ${NAME}ManagerImpl()
-    }
-}
+#set ($FEATURE_CAMEL_CASE = ${StringUtils.removeAndHump(${NAME}, "_")})
+data class ${FEATURE_CAMEL_CASE}Model(
+    val id: String
+)

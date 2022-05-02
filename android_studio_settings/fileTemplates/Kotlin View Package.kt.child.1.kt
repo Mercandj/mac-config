@@ -1,18 +1,16 @@
-#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${FEATURE}
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${NAME}
 
 #end
 #parse("File Header.java")
-class ${NAME}Presenter(
-    private val screen: ${NAME}Contract.Screen
-) : ${NAME}Contract.UserAction {
+#set ($FEATURE_CAMEL_CASE = ${StringUtils.removeAndHump(${NAME}, "_")})
+interface ${FEATURE_CAMEL_CASE}Contract {
 
-    override fun onAttachedToWindow() {
-        updateScreen()
+    interface UserAction {
+        
+        fun onAttachedToWindow()
+        
+        fun onDetachedFromWindow()
     }
-
-    override fun onDetachedFromWindow() {
-    }
-
-    private fun updateScreen() {
-    }
+   
+   interface Screen
 }

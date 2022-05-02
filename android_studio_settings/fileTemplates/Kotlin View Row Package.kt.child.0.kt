@@ -1,8 +1,9 @@
-#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${FEATURE}
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}.${NAME}
 
 #end
 #parse("File Header.java")
-interface ${NAME}Contract {
+#set ($FEATURE_CAMEL_CASE = ${StringUtils.removeAndHump(${NAME}, "_")})
+interface ${FEATURE_CAMEL_CASE}Contract {
 
     interface UserAction {
         
@@ -10,7 +11,7 @@ interface ${NAME}Contract {
         
         fun onDetachedFromWindow()
         
-        fun onViewModelSet(viewModel: ${NAME}Model)
+        fun onViewModelSet(viewModel: ${FEATURE_CAMEL_CASE}Model)
     }
    
    interface Screen
