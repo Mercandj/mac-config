@@ -183,6 +183,7 @@ export ANDROID_NDK=/Users/jonathan/Library/Android/sdk/ndk-bundle
 # OR -> https://stackoverflow.com/a/24657630/12057504
 #       https://www.azul.com/downloads/?version=java-11-lts&os=macos&architecture=arm-64-bit&package=jdk
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
+# export JAVA_HOME=/opt/homebrew/Cellar/openjdk/18.0.1.1/libexec/openjdk.jdk/Contents/Home
 
 # Brew mac M1
 # https://stackoverflow.com/a/65760032/12057504
@@ -303,7 +304,8 @@ alias inkscape="/Applications/Inkscape.app/Contents/MacOS/inkscape"
 
 alias cls="clear"
 alias adbopenurl="adb shell am start -a android.intent.action.VIEW -d "
-alias adbuninstall="adb shell pm uninstall -k "
+alias adbinstall="adb devices | tail -n +2 | cut -sf 1 | xargs -I {} adb -s {} install -r " # argument: apk
+alias adbuninstall="adb devices | tail -n +2 | cut -sf 1 | xargs -I {} adb -s {} shell pm uninstall -k " # argument: package name
 
 # Fred alias
 alias gfix="git add . && git commit --am --no-edit && git push -f"
