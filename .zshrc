@@ -313,6 +313,7 @@ function mr() {
         echo "Usage: mr [branch_name] [commit_message]"
         return
     fi
+    setprogit
     echo "MR bash function"
     BRANCH_NAME=$1
     COMMIT_MESSAGE=$2
@@ -376,3 +377,9 @@ ulimit -S -n 1024
 
 # ------------------ JONATHAN ------------------ #
 # ---------------------------------------------- #
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jonathan/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jonathan/Documents/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jonathan/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jonathan/Documents/google-cloud-sdk/completion.zsh.inc'; fi
