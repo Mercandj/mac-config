@@ -100,14 +100,11 @@ source $ZSH/oh-my-zsh.sh
 
 
 
-
 # ---------------------------------------------- #
 # ------------------ JONATHAN ------------------ #
 
 # brew install zsh zsh-completions
 # https://medium.com/@caulfieldOwen/youre-missing-out-on-a-better-mac-terminal-experience-d73647abf6d7
-
-
 
 # --------------- JONATHAN antigen ------------- #
 # https://github.com/zsh-users/antigen
@@ -185,7 +182,7 @@ export ANDROID_NDK=/Users/jonathan/Library/Android/sdk/ndk-bundle
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
 # export JAVA_HOME=/opt/homebrew/Cellar/openjdk/18.0.1.1/libexec/openjdk.jdk/Contents/Home
 
-# Brew mac M1
+# Jonathan: Brew mac M1
 # https://stackoverflow.com/a/65760032/12057504
 export PATH=/opt/homebrew/bin:$PATH
 
@@ -206,22 +203,56 @@ export PATH=$PATH:/Users/jonathan/.apkstudio/vendor
 export MWM_MAVEN_PATH=/Users/jonathan/Documents/maven
 
 # Jonathan: Alias
+alias aapt="$ANDROID_HOME/build-tools/27.0.3/aapt"
+alias adbd="adb devices -l"
+alias adbi="adb install -r "
+alias adbinstall="adb devices | tail -n +2 | cut -sf 1 | xargs -I {} adb -s {} install -r " # argument: apk
+alias adbopenurl="adb shell am start -a android.intent.action.VIEW -d "
+alias adbuninstall="adb devices | tail -n +2 | cut -sf 1 | xargs -I {} adb -s {} shell pm uninstall -k " # argument: package name
+alias add="git add ."
+alias addr2line="${ANDROID_NDK}/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-addr2line -C -f -e "
+alias am="git commit --am"
+alias apkinstall="adb devices | tail -n +2 | cut -sf 1 | xargs -I X adb -s X install -r $1"
+alias br="git branch | grep \" \""
+alias brdel="git branch | grep -v \* | xargs git branch -D"
+alias buildAndInstallDebugApk="./gradlew assembleUniversalDebug && apkinstall ./app/build/outputs/apk/universal/debug/app-universal-debug.apk"
+alias buildAndInstallReleaseApk="./gradlew assembleUniversalRelease && apkinstall ./app/build/outputs/apk/universal/release/app-universal-release.apk"
+alias cherrypick="git cherry-pick -x"
+alias clone="git clone"
+alias clr="git reset && git checkout -- ."
+alias cls="clear"
+alias co="git checkout"
+alias commit="git commit"
+alias commitm="git commit -m"
+alias dev="git checkout dev"
+alias dex2jar='~/Documents/dex2jar/d2j-dex2jar.sh'
+alias diff="git diff HEAD"
+alias emul="pushd ${ANDROID_SDK}/emulator && ./emulator -list-avds && popd"
+alias emus="~/Documents/mac-config/script_emulator_start.sh $1"
 alias finder="open ."
+alias gam="git commit --am"
+alias gc="git commit"
+alias gfix="git add . && git commit --am --no-edit && git push -f" # Fred alias
+alias gitbr="git branch | grep \" \""
+alias gitbrdel="git branch | grep -v \* | xargs git branch -D"
+alias gitco="git checkout"
+alias gitpull="git pull"
+alias gitst="git status"
+alias gitstash="git stash"
+alias gitstatus="git status"
+alias go="git checkout"
 alias goto="cd ~/Desktop"
 alias gotoa="cd ~/Documents/mwm-audio && setprogit"
 alias gotoads="cd ~/Documents/ads-kit && setprogit"
 alias gotoapp="cd ~/Documents/app-kits && setprogit"
-alias gotob="cd ~/Documents/browser && setpersogit"
 alias gotoba="cd ~/Documents/bassbooster && setprogit"
 alias gotobass="cd ~/Documents/bassbooster && setprogit"
 alias gotod="cd ~/Documents/drums-app && setprogit"
 alias gotody="cd ~/Documents/dynamic-screen-android && setprogit"
 alias gotoe="cd ~/Documents/edjing && setprogit"
 alias gotoeq="cd ~/Documents/equalizer-plus && setprogit"
-alias gotof="cd ~/Documents/file-android && setpersogit"
 alias gotofi="cd ~/Documents/files-kit && setprogit"
 alias gotog="cd ~/Documents/guitar-tuner && setprogit"
-alias gotol="cd ~/Documents/launcher && setpersogit"
 alias gotolo="cd ~/Documents/lokalise-android && setprogit"
 alias gotom="cd ~/Documents/mercandalli-android && setpersogit"
 alias gotoma="cd ~/Documents/mac-config && setpersogit"
@@ -237,76 +268,53 @@ alias gotosdk="cd $ANDROID_SDK"
 alias gotoss="cd ~/Documents/AndroidSoundSystemV2 && setprogit"
 alias gotot="cd ~/Documents/taozen-android-v3 && setprogit"
 alias gototoo="cd ~/Documents/toonify && setprogit"
-alias gotoy="cd ~/Documents/youtube"
-alias gotoyoo="cd ~/Documents/yootoob && setprogit"
-alias gotov="cd ~/Documents/video && setpersogit"
 alias gotow="cd ~/Documents/"
 alias gotowa="cd ~/Documents/wallpaper-android && setprogit"
-
-# Jonathan: Alias Git
-alias runserver="gotof; ./run-server.sh"
-alias ls="ls -l -a"
-alias adbd="adb devices -l"
-alias adbi="adb install -r "
-alias add="git add ."
-alias gc="git commit"
-alias commit="git commit"
-alias commitm="git commit -m"
-alias res="git reset -q --hard HEAD --"
-alias cherrypick="git cherry-pick -x"
-alias gs="git status"
-alias st="git status"
-alias gst="git status"
-alias gitst="git status"
-alias gitstatus="git status"
-alias gitstash="git stash"
-alias stash="git stash"
-alias go="git checkout"
-alias co="git checkout"
-alias gitco="git checkout"
-alias diff="git diff HEAD"
-alias dev="git checkout dev"
-alias master="git checkout master"
+alias gotoyoo="cd ~/Documents/yootoob && setprogit"
 alias gp="git pull"
+alias gpush="git push"
+alias gs="git status"
+alias gst="git status"
+alias inkscape="/Applications/Inkscape.app/Contents/MacOS/inkscape"
+alias iosird="/Users/jonathan/Documents/mercandalli-android/multi_platform_ios/ird.sh"
+alias iosu="/Users/jonathan/Documents/mercandalli-android/multi_platform_ios/script/run_debug.sh" # Update certifs to a connected iOS device (non simulator)
+alias ird="~/Documents/mac-config/script_install_run_debug.sh " # https://crushingcode.nisrulz.com/posts/how-i-reduced-android-build-times
+alias irr="~/Documents/mac-config/script_install_run_release.sh " # https://crushingcode.nisrulz.com/posts/how-i-reduced-android-build-times
+alias jd-gui='java -jar ~/Documents/dex2jar/jd-gui-1.4.0.jar'
+alias ktformat="~/Documents/mac-config/script_ktformat.sh "
+alias ktlint="~/Documents/mac-config/script_ktlint.sh "
+alias log="git log"
+alias logme="git log --author=\"Jonathan\" --format=oneline"
+alias logmemr="git log --author=\"Jonathan\" --format=oneline | grep -v \"Merge branch\""
+alias ls="ls -l -a"
+alias master="git checkout master"
+alias merge="git merge"
+alias publish="./gradlew publishRelease"
+alias publishe="pullmav && gotoe && add && stash && dev && pull && ./gradlew edjingFree:publishRelease"
+alias publishy="gotoy && ./gradlew assembleUniversalRelease"
 alias pull="git pull"
 alias pullmav="pushd ~/Documents/maven && pull && popd"
 alias pullmavs="pushd ~/Documents/mercandalli-android && ./config/script/mwm/pull_mavens.sh && popd"
-alias gitpull="git pull"
 alias push="git push"
 alias pushf="git push -f"
 alias pushu="git push -u origin"
-alias gpush="git push"
-alias clone="git clone"
-alias am="git commit --am"
-alias gam="git commit --am"
-alias merge="git merge"
-alias rebd="git rebase dev"
 alias rebase="git rebase"
 alias rebasec="git rebase --continue"
 alias rebased="git rebase dev"
 alias rebasedev="git rebase dev"
-alias br="git branch | grep \" \""
-alias gitbr="git branch | grep \" \""
-alias brdel="git branch | grep -v \* | xargs git branch -D"
-alias gitbrdel="git branch | grep -v \* | xargs git branch -D"
-alias clr="git reset && git checkout -- ."
+alias rebd="git rebase dev"
+alias res="git reset -q --hard HEAD --"
+alias runserver="gotom && ./server/start.sh"
+alias runy="rundy"
+alias screenshot="adb shell screencap -p /sdcard/screen.png && adb pull /sdcard/screen.png && adb shell rm /sdcard/screen.png"
+alias server="gotom && ./server/start.sh"
+alias setpersogit="git config --global user.email 'modjow.jm9@gmail.com' && git config --global user.name 'Mercandj'"
+alias setprogit="git config --global user.email 'jonathan.mercandalli@djit.fr' && git config --global user.name 'Jonathan'"
+alias st="git status"
+alias stash="git stash"
 alias tag="git tag"
-alias log="git log"
-alias logme="git log --author=\"Jonathan\" --format=oneline"
-alias logmemr="git log --author=\"Jonathan\" --format=oneline | grep -v \"Merge branch\""
-alias emul="pushd ${ANDROID_SDK}/emulator && ./emulator -list-avds && popd"
-alias emus="~/Documents/mac-config/script_emulator_start.sh $1"
-alias iosu="/Users/jonathan/Documents/mercandalli-android/multi_platform_ios/script/run_debug.sh" # Update certifs to a connected iOS device (non simulator)
-alias iosird="/Users/jonathan/Documents/mercandalli-android/multi_platform_ios/ird.sh"
-alias inkscape="/Applications/Inkscape.app/Contents/MacOS/inkscape"
+alias unity='/Applications/Unity/Unity.app/Contents/MacOS/Unity' # Jonathan alias unity
 
-alias cls="clear"
-alias adbopenurl="adb shell am start -a android.intent.action.VIEW -d "
-alias adbinstall="adb devices | tail -n +2 | cut -sf 1 | xargs -I {} adb -s {} install -r " # argument: apk
-alias adbuninstall="adb devices | tail -n +2 | cut -sf 1 | xargs -I {} adb -s {} shell pm uninstall -k " # argument: package name
-
-# Fred alias
-alias gfix="git add . && git commit --am --no-edit && git push -f"
 # Jonathan: Create Merge Request like that: mr jm/home-screen-skeleton "[HomeScreen] Skeleton"
 function mr() {
     if [ $# -ne 2 ]; then
@@ -326,45 +334,6 @@ function mr() {
     git push --set-upstream origin $BRANCH_NAME # --push-option=merge_request.create --push-option=merge_request.label="mr::to-review"
     open "https://code.musicworldmedia.com/"
 }
-
-# Jonathan alias unity
-alias unity='/Applications/Unity/Unity.app/Contents/MacOS/Unity'
-
-# Jonathan alias Android
-# https://android.jlelse.eu/how-i-reduced-my-android-build-times-by-89-4242e51ce946
-alias aapt="$ANDROID_HOME/build-tools/27.0.3/aapt"
-alias apkinstall="adb devices | tail -n +2 | cut -sf 1 | xargs -I X adb -s X install -r $1"
-alias buildAndInstallDebugApk="./gradlew assembleUniversalDebug && apkinstall ./app/build/outputs/apk/universal/debug/app-universal-debug.apk"
-alias buildAndInstallReleaseApk="./gradlew assembleUniversalRelease && apkinstall ./app/build/outputs/apk/universal/release/app-universal-release.apk"
-alias ird="~/Documents/mac-config/script_install_run_debug.sh "
-alias irr="~/Documents/mac-config/script_install_run_release.sh "
-alias ktformat="~/Documents/mac-config/script_ktformat.sh "
-alias ktlint="~/Documents/mac-config/script_ktlint.sh "
-alias launchYoutubeApk="adb shell monkey -p com.mercandalli.android.apps.youtube 1"
-alias publish="./gradlew publishRelease"
-alias publishe="pullmav && gotoe && add && stash && dev && pull && ./gradlew edjingFree:publishRelease"
-alias publishy="gotoy && ./gradlew assembleUniversalRelease"
-alias runDebugYoutube="gotoy && buildAndInstallDebugApk && launchYoutubeApk"
-alias rundy="gotoy && buildAndInstallDebugApk && launchYoutubeApk"
-alias runry="gotoy && buildAndInstallReleaseApk && launchYoutubeApk"
-alias runy="rundy"
-alias screenshot="adb shell screencap -p /sdcard/screen.png && adb pull /sdcard/screen.png && adb shell rm /sdcard/screen.png"
-alias server="gotom && ./server/start.sh"
-
-alias startHydra="gotoe && ./hydra/start.sh"
-alias pullHydra="gotoe && ./hydra/pull.sh"
-alias stopHydra="gotoe && ./hydra/stop.sh"
-
-alias addr2line="${ANDROID_NDK}/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-addr2line -C -f -e "
-alias dex2jar='~/Documents/dex2jar/d2j-dex2jar.sh'
-alias jd-gui='java -jar ~/Documents/dex2jar/jd-gui-1.4.0.jar'
-
-alias setprogit="git config --global user.email 'jonathan.mercandalli@djit.fr' && git config --global user.name 'Jonathan'"
-alias setpersogit="git config --global user.email 'modjow.jm9@gmail.com' && git config --global user.name 'Mercandj'"
-
-# Connect Android CI local
-alias androidci="ssh android-ci@10.12.2.58"
-alias vincentci="ssh vbarthel@10.12.7.215"
 
 # Jonathan alias Android - WebP
 # https://developers.google.com/speed/webp/download
